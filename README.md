@@ -1,1 +1,0 @@
-# mobdev-ionic-ca2
