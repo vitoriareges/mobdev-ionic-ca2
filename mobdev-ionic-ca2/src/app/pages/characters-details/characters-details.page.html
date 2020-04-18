@@ -4,6 +4,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+	
+<ion-card *ngIf="episode">
+  <ion-card-content>
+    {{ character.name }}
+  </ion-card-content>
+</ion-card>
 
 </ion-content>
