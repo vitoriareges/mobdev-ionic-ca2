@@ -14,12 +14,12 @@ getEpisodes(){
 }
 
 getEpisode(id){
-    return this.http.get('https://www.breakingbadapi.com/api/episodes/${id}')
+    return this.http.get(`https://www.breakingbadapi.com/api/episodes/${id}`)
 }
 getCharacters(){
     return this.http.get('https://www.breakingbadapi.com/api/characters')
 }
 getCharacter(id){
-    return this.http.get('https://www.breakingbadapi.com/api/characters/${id}')
+    return this.http.get(`https://www.breakingbadapi.com/api/characters/${id}`)
 }
 }
