@@ -10,14 +10,15 @@
 
 	<ion-card *ngIf="character">
 		<ion-card-content>
-			<ion-item class="movie-info" lines="none">
-				<ion-icon name="character" slot="start"></ion-icon>
-				Director: {{ character.name }}
-			</ion-item>
-			<ion-item class="movie-info" lines="none">
-				<ion-icon name="calendar" slot="start"></ion-icon>
-				Release Date: {{ character.name  }}
-			</ion-item>
+			<p align="center"><img [src]="character.img" width="180" height="180" class="info-img"></p>
+				<ion-item class="movie-info" lines="none">
+					<ion-icon name="character" slot="start"></ion-icon>
+					Director: {{ character.name }}
+				</ion-item>
+				<ion-item class="movie-info" lines="none">
+					<ion-icon name="calendar" slot="start"></ion-icon>
+					Release Date: {{ character.name  }}
+				</ion-item>
 
 		</ion-card-content>
 	</ion-card>
