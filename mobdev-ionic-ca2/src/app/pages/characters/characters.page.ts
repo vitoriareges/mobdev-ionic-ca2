@@ -16,9 +16,9 @@ characters: Observable<any>;
       this.characters.subscribe(data => {console.log('my data; ', data)});
   }
 
-  openDetails(characters){
-let charId = characters.char_id;
-this.router.navigateByUrl('/tabs/characters/${charactersId}');
+  openDetails(character){
+let characterId = character.char_id;
+this.router.navigateByUrl(`/tabs/characters/${characterId}`);
 }
 
 }

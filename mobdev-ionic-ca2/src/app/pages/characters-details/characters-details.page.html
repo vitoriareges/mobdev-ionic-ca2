@@ -1,17 +1,26 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-back-button defaulthref="/tabs/characters"></ion-back-button>
-    </ion-buttons>
-    <ion-title>Character Details</ion-title>
-  </ion-toolbar>
+	<ion-toolbar color="primary">
+		<ion-buttons slot="start">
+			<ion-back-button defaulthref="/tabs/characters"></ion-back-button>
+		</ion-buttons>
+		<ion-title>Character Details</ion-title>
+	</ion-toolbar>
 </ion-header>
 <ion-content padding>
+
+	<ion-card *ngIf="character">
+		<ion-card-content>
+			<ion-item class="movie-info" lines="none">
+				<ion-icon name="character" slot="start"></ion-icon>
+				Director: {{ character.name }}
+			</ion-item>
+			<ion-item class="movie-info" lines="none">
+				<ion-icon name="calendar" slot="start"></ion-icon>
+				Release Date: {{ character.name  }}
+			</ion-item>
 	
-<ion-card *ngIf="episode">
-  <ion-card-content>
-    {{ character.name }}
-  </ion-card-content>
-</ion-card>
+	</ion-card-content>
+    </ion-card>
+	
 
 </ion-content>
