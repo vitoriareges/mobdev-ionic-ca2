@@ -1,6 +1,13 @@
 import { Injectable } from '@angular/core';
 import {  HttpClient } from '@angular/common/http';
 
+export enum SearchType {
+    all = '',
+    quote_id = 'id',
+    author = 'author',
+
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -22,4 +29,23 @@ getCharacters(){
 getCharacter(id){
     return this.http.get(`https://www.breakingbadapi.com/api/characters/${id}`)
 }
+
+getQuotes(){
+    return this.http.get(`https://www.breakingbadapi.com/api/quotes`)
+}
+
+getQuote(id){
+    return this.http.get(`https://www.breakingbadapi.com/api/quotes/${id}`)
+}
+
+getDeaths(){
+    return this.http.get(`https://www.breakingbadapi.com/api/deaths`)
+}
+
+getDeath(id){
+    return this.http.get(`https://www.breakingbadapi.com/api/deaths/${id}`)
+}
+
+
+
 }
