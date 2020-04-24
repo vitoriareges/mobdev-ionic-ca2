@@ -1,6 +1,8 @@
 import { ApiService } from './../../services/api.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FavouriteService } from '../../services/favourite.service';
+
 @Component({
   selector: 'app-episode-details',
   templateUrl: './episode-details.page.html',
@@ -15,5 +17,7 @@ export class EpisodeDetailsPage implements OnInit {
     this.api.getEpisode(this.episodeId).subscribe(res => {
       this.episode = res[0];
     })
+
+    
     }
 }
