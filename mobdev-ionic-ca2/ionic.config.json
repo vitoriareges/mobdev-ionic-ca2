@@ -1,5 +1,7 @@
 {
   "name": "mobdev-ionic-ca2",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -11,13 +11,36 @@ import { FavouriteService } from '../../services/favourite.service';
 export class EpisodeDetailsPage implements OnInit {
   episode: any;
   episodeId = null;
-  constructor(private activatedRoute: ActivatedRoute, private api: ApiService) {}
-  ngOnInit() {
-    this.episodeId = this.activatedRoute.snapshot.paramMap.get('id');
-    this.api.getEpisode(this.episodeId).subscribe(res => {
-      this.episode = res[0];
-    })
+  isFavourite = false;
+  constructor(private activatedRoute: ActivatedRoute, private api: ApiService, private favouriteService: FavouriteService) {}
+ ngOnInit() {
+        
+        this.episodeId = this.activatedRoute.snapshot.paramMap.get('id');
+        
+        this.api.getEpisode(this.episodeId).subscribe(res => {
+            this.episode = res[0]; 
+        });
 
-    
+
+
+        this.favouriteService.isFavourite(this.episodeId).then(isFav => {
+            this.isFavourite = isFav; 
+        });
     }
+
+
+
+    favouriteEpisode() {
+        this.favouriteService.favouriteEpisode(this.episodeId).then(() => {
+            this.isFavourite = true; 
+        });
+    }
+
+    unfavouriteEpisode() {
+        this.favouriteService.unfavouriteEpisode(this.episodeId).then(() => {
+            this.isFavourite = false; 
+        });
+    }
+     
+    
 }
