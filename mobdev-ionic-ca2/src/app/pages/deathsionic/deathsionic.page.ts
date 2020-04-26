@@ -10,10 +10,16 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class DeathsionicPage implements OnInit {
     deaths: Observable<any>;
+    search: any="";
     constructor(private router: Router, private api: ApiService) { }
+   
     ngOnInit() {
-        this.deaths = this.api.getDeaths();
-        this.deaths.subscribe(data => { console.log('my data; ', data) });
-    }
-
+       this.deaths = this.api.getDeaths();
+         this.router.navigateByUrl(`/tabs/deaths}`);
+    
+  }
+  filter(death){
+    // console.log(death.author);
+    return death.responsible.toLowerCase().indexOf(this.search.toLowerCase()) != -1;
+  }
 }

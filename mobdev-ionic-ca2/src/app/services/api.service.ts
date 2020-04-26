@@ -31,7 +31,7 @@ getCharacter(id){
 }
 
 getQuotes(){
-    return this.http.get(`https://www.breakingbadapi.com/api/quotes`)
+    return this.http.get('https://www.breakingbadapi.com/api/quotes')
 }
 
 getQuote(id){
@@ -39,7 +39,7 @@ getQuote(id){
 }
 
 getDeaths(){
-    return this.http.get(`https://www.breakingbadapi.com/api/deaths`)
+    return this.http.get('https://www.breakingbadapi.com/api/deaths')
 }
 
 getDeath(id){
