@@ -7,10 +7,10 @@
     <ion-title>Episodes Details:</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="unfavouriteEpisode()" *ngIf="isFavourite">
-        <ion-icon name="heart" slot="icon-only" color="secondary"></ion-icon>
+        <ion-icon name="heart" slot="icon-only" color="warning"></ion-icon>
       </ion-button>
       <ion-button (click)="favouriteEpisode()" *ngIf="!isFavourite">
-        <ion-icon name="heart-outline" slot="icon-only" color="secondary"></ion-icon>
+        <ion-icon name="heart-outline" slot="icon-only" color="warning"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>

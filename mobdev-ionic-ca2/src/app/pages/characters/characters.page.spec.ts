@@ -1,7 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-
 import { CharactersPage } from './characters.page';
+import { ViewChild } from '@angular/core';
+import { IonInfiniteScroll } from '@ionic/angular';
 
 describe('CharactersPage', () => {
   let component: CharactersPage;

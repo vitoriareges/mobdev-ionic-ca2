@@ -8,6 +8,7 @@ import { CharactersPageRoutingModule } from './characters-routing.module';
 
 import { CharactersPage } from './characters.page';
 
+
 @NgModule({
   imports: [
     CommonModule,
