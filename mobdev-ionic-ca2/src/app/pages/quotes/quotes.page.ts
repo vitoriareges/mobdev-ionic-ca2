@@ -12,52 +12,34 @@ import { ApiService } from '../../services/api.service';
 
 export class QuotesPage implements OnInit {
 
-    
+
     quotes: Observable<any>;
     search: any = "";
-     quote = [];
-  numTimesLeft = 5;
 
     constructor(private router: Router, private api: ApiService) {
         this.ngOnInit();
-     }
-
-     
- loadData(event) {
-    setTimeout(() => {
-      console.log('Done');
-      this.ngOnInit();
-      this.numTimesLeft -= 1;
-      event.target.complete();
-    }, 2000);
-  }
-
-  
+    }
 
     ngOnInit() {
-       
+
         this.quotes = this.api.getQuotes();
         this.quotes.subscribe(data => {
-        console.log('my data: ', data);
+            console.log('my data: ', data);
         });
     }
 
 
     openDetails(quote) {
-         for (let i=0; i<10; i++){
-        this.quote.push(i);
-         let quoteid = quote.quotes_id;
-        console.log('my dataQuoteDetails: ', quoteid)
-        
-    
-        this.router.navigateByUrl(`/tabs/quotes/${quote}`);}
+        let quoteId = quote.quote_id;
+        console.log('my dataQuoteDetails: ', quoteId)
+        this.router.navigateByUrl(`/tabs/quotes/${quoteId}`);
         ;
     }
 
-    filter(quote){
-    // console.log(death.author);
-    return quote.author.toLowerCase().indexOf(this.search.toLowerCase()) != -1;
-  }
+    filter(quote) {
+        // console.log(death.author);
+        return quote.author.toLowerCase().indexOf(this.search.toLowerCase()) != -1;
+    }
 
-    
+
 }

@@ -4,20 +4,46 @@
 			<ion-back-button defaulthref="/tabs/characters"></ion-back-button>
 		</ion-buttons>
 		<ion-title>Character Details</ion-title>
-	</ion-toolbar>
+        <ion-buttons slot="end">
+      <ion-button (click)="unfavouriteCharacters()" *ngIf="isFavourite">
+        <ion-icon name="heart" slot="icon-only" color="secondary"></ion-icon>
+      </ion-button>
+      <ion-button (click)="favouriteCharacters()" *ngIf="!isFavourite">
+        <ion-icon name="heart-outline" slot="icon-only" color="secondary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+	
 </ion-header>
 <ion-content padding>
 
 	<ion-card *ngIf="character">
 		<ion-card-content>
-			<p align="center"><img [src]="character.img" width="180" height="180" class="info-img"></p>
-				<ion-item class="movie-info" lines="none">
-					<ion-icon name="contact" slot="start"></ion-icon>
+        <ion-item class="movie-info" lines="none">
+					<ion-icon name="happy" slot="start"></ion-icon>
 					Character: {{ character.name }}
 				</ion-item>
+			<p align="center"><img [src]="character.img" width="180" height="180" class="info-img"></p>
+				
 				<ion-item class="movie-info" lines="none">
-					<ion-icon name="calendar" slot="start"></ion-icon>
+					<ion-icon name="finger-print" slot="start"></ion-icon>
 					Nickname: {{ character.nickname  }}
+				</ion-item>
+                <ion-item class="movie-info" lines="none">
+					<ion-icon name="calendar" slot="start"></ion-icon>
+					Bday: {{ character.birthday  }}
+				</ion-item>
+                <ion-item class="movie-info" lines="none">
+					<ion-icon name="flask" slot="start"></ion-icon>
+					Occupation: {{ character.occupation  }}
+				</ion-item>
+                <ion-item class="movie-info" lines="none">
+					<ion-icon name="heart" slot="start"></ion-icon>
+					Status: {{ character.status  }}
+				</ion-item>
+                <ion-item class="movie-info" lines="none">
+					<ion-icon name="film" slot="start"></ion-icon>
+					Seasons: {{ character.appearance  }}
 				</ion-item>
 
 		</ion-card-content>

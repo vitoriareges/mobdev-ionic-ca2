@@ -11,6 +11,7 @@ import { FavouriteService } from '../../services/favourite.service';
 export class QuoteDetailsPage implements OnInit {
   quote: any;
   quoteId = null;
+  
   constructor(private activatedRoute: ActivatedRoute, private api: ApiService) {}
   ngOnInit() {
     this.quoteId = this.activatedRoute.snapshot.paramMap.get('id');

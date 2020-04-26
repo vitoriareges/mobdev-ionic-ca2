@@ -1,4 +1,5 @@
 <ion-header>
+<!-- code base from mobdev classes and slides -->
 	<ion-toolbar color="primary">
 		<ion-buttons slot="start">
 			<ion-back-button defaulthref="/tabs/quote"></ion-back-button>
@@ -11,12 +12,16 @@
 	<ion-card *ngIf="quote">
 		<ion-card-content>
 				<ion-item class="movie-info" lines="none">
-					<ion-icon name="contact" slot="start"></ion-icon>
-					Character: {{ quote.author }}
+					<ion-icon name="film" slot="start"></ion-icon>
+					 {{ quote.series }}
 				</ion-item>
 				<ion-item class="movie-info" lines="none">
-					<ion-icon name="calendar" slot="start"></ion-icon>
-					Nickname: {{ quote.author }}
+					<ion-icon name="happy" slot="start"></ion-icon>
+					Character author: {{ quote.author }}
+				</ion-item>
+                <ion-item class="movie-info" lines="none">
+					<ion-icon name="chatbubbles" slot="start"></ion-icon>
+					{{ quote.quote }}
 				</ion-item>
 
 		</ion-card-content>

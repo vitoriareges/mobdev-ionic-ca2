@@ -1,4 +1,5 @@
 <ion-header>
+<!-- code base from mobdev classes and slides -->
   <ion-toolbar color="primary">
     <ion-buttons slot="start" defaultHref="/tabs/episodes">
       <ion-back-button></ion-back-button>
@@ -6,23 +7,23 @@
     <ion-title>Episodes Details:</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="unfavouriteEpisode()" *ngIf="isFavourite">
-        <ion-icon name="star" slot="icon-only" color="secondary"></ion-icon>
+        <ion-icon name="heart" slot="icon-only" color="secondary"></ion-icon>
       </ion-button>
       <ion-button (click)="favouriteEpisode()" *ngIf="!isFavourite">
-        <ion-icon name="star-outline" slot="icon-only" color="secondary"></ion-icon>
+        <ion-icon name="heart-outline" slot="icon-only" color="secondary"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
   <ion-card *ngIf="episode" class="movie-card">
-    <ion-card-header>Episode {{ episode.season }}: {{ episode.episode }}</ion-card-header>
+    <ion-card-header>Season {{ episode.season }} - Episode: {{ episode.episode }}</ion-card-header>
     <ion-card-content>
-      {{ episode.season }}
+      {{ episode.series }} :  {{ episode.title }}
     </ion-card-content>
     <ion-item class="movie-info" lines="none">
-      <ion-icon name="episode" slot="start"></ion-icon>
-      Director: {{ episode.season }}
+      <ion-icon name="flask" slot="start"></ion-icon>
+      Characters in this episode: {{ episode.characters }}
     </ion-item>
     <ion-item class="movie-info" lines="none">
       <ion-icon name="calendar" slot="start"></ion-icon>

@@ -4,16 +4,12 @@
 	</ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-searchbar name="search" [(ngModel)]="search" placeholder="Who quoted it?" cancelButtonText="Cancel"></ion-searchbar>
-    <div *ngFor="let quote of quotes | async">
-      <ion-item *ngIf="filter(quote)">
-      <p>{{ quote.quote }}</p>
-    </ion-item>
-    </div>
-	 <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
-    <ion-infinite-scroll-content
-      loadingSpinner="crescent"
-      loadingText="Loading more quotes...">
-    </ion-infinite-scroll-content>
-  </ion-infinite-scroll>
+	<ion-searchbar name="search" [(ngModel)]="search" placeholder="Who quoted it?" cancelButtonText="Cancel">
+	</ion-searchbar>
+	<div *ngFor="let quote of quotes | async">
+    <ion-item *ngIf="filter(quote)" button detail lines="inset" (click)= "openDetails(quote)" >
+		
+			<p>{{ quote.quote }}</p>
+		</ion-item>
+	</div>
 </ion-content>
